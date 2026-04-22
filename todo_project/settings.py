@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Added the custom accounts app so Django can load CustomUser.
     'accounts',
+    'tasks',
 ]
 
 MIDDLEWARE = [
