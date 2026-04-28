@@ -28,6 +28,8 @@ class Tag(models.Model):
 class Task(models.Model):
     title = models.CharField(max_length=200)
     is_completed = models.BooleanField(default=False)
+    due_date = models.DateField(null=True, blank=True)
+    priority = models.IntegerField()
     todo_list = models.ForeignKey(
         ToDoList,
         on_delete=models.CASCADE,
