@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Django local files
+db.sqlite3
+*.log
+
+# Environment variables / secrets
+.env
+.env.*
+
+# Tailwind standalone binary
+tailwindcss
+
+# Node artifacts, in case npm is used again temporarily
+node_modules/
+package-lock.json
+

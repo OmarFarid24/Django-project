@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="{% static 'output.css' %}">
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <nav class="bg-white shadow px-6 py-4 flex justify-between items-center">
+        <a href="/lists/" class="font-bold text-xl">ToDo App</a>
+
+        <div class="space-x-4">
+            {% if user.is_authenticated %}
+                <span class="text-gray-600">{{ user.email }}</span>
+
+                <form action="{% url 'logout' %}" method="post" class="inline">
+                    {% csrf_token %}
+                    <button type="submit" class="text-red-600">Cerrar sesión</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}" class="text-blue-600">Iniciar sesión</a>
+                <a href="{% url 'register' %}" class="text-blue-600">Registrarse</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto p-6">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>

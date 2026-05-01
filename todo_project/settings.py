@@ -122,6 +122,10 @@ STATIC_URL = 'static/'
 # Added to tell Django to use the custom user model from accounts.
 AUTH_USER_MODEL = 'accounts.CustomUser'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/lists/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
 LOGIN_URL = '/accounts/login/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
